@@ -117,7 +117,6 @@ export const CardItem = ({
   const mouseXSpring = useSpring(x);
   const mouseYSpring = useSpring(y);
 
-  // Convert string values to numbers for springs
   const rotateXNum = typeof rotateX === 'string' ? parseFloat(rotateX) : rotateX;
   const rotateYNum = typeof rotateY === 'string' ? parseFloat(rotateY) : rotateY;
   const rotateZNum = typeof rotateZ === 'string' ? parseFloat(rotateZ) : rotateZ;
@@ -171,7 +170,6 @@ export const CardItem = ({
   );
 };
 
-// Create a hook to use the context
 export const useMouseEnter = () => {
   const context = useContext(MouseEnterContext);
   if (context === undefined) {

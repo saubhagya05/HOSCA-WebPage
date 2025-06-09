@@ -16,7 +16,6 @@ interface CommitteeMember {
 }
 
 const committeeMembers: CommitteeMember[] = [
-  // Club Coordinators
   {
     id: 1,
     name: "Sukrit Ghosh",
@@ -78,7 +77,6 @@ const committeeMembers: CommitteeMember[] = [
     role: "coordinator"
   },
 
-  // Web & Dev Team
   {
     id: 7,
     name: "Srivardhan Rao",
@@ -109,8 +107,6 @@ const committeeMembers: CommitteeMember[] = [
     linkedinUrl: "https://linkedin.com/in/tarun-meruga",
     role: "web_dev"
   },
-
-  // Website Developers
   {
     id: 10,
     name: "Ashutosh Kumar Singh",
@@ -180,8 +176,6 @@ export default function HOSCAACommitteePage() {
       
       <div className="container mx-auto px-4 py-8 relative z-10">
         <h1 className="text-4xl font-bold text-center mb-8 text-white mt-24">HOSCAA Committee</h1>
-
-        {/* Introduction */}
         <section className="max-w-3xl mx-auto mb-12 text-center">
           <p className="text-lg text-gray-300">
             The House of Students Cultural Affairs Association (HOSCAA) is responsible for managing and
@@ -190,9 +184,7 @@ export default function HOSCAACommitteePage() {
           </p>
         </section>
 
-        {/* Group members by club/team */}
         <div className="space-y-16">
-          {/* Club Coordinators Section */}
           <div>
             <h2 className="text-2xl font-semibold mb-8 text-center text-white">HoSCA Club Coordinators</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1600px] mx-auto">
@@ -200,7 +192,6 @@ export default function HOSCAACommitteePage() {
                 <div key={member.id} className="flex justify-center">
                   <CardContainer className="w-[500px]">
                     <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-8 border">
-                      {/* Photo Section */}
                       <CardItem translateZ="100" className="w-full mt-4">
                         <div className="relative w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-2 border-emerald-500">
                           {member.imageUrl ? (
@@ -219,7 +210,6 @@ export default function HOSCAACommitteePage() {
                         </div>
                       </CardItem>
 
-                      {/* Info Section */}
                       <CardItem
                         translateZ="50"
                         className="text-2xl font-bold text-neutral-600 dark:text-white text-center"
@@ -241,7 +231,6 @@ export default function HOSCAACommitteePage() {
                         {member.department}
                       </CardItem>
 
-                      {/* Social Links */}
                       <div className="flex justify-center gap-6 mt-6">
                         {member.email && (
                           <CardItem
@@ -275,7 +264,6 @@ export default function HOSCAACommitteePage() {
             </div>
           </div>
 
-          {/* Web & Dev Team Section */}
           <div>
             <h2 className="text-2xl font-semibold mb-8 text-center text-white">Web & Dev Team</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1600px] mx-auto">
@@ -283,7 +271,6 @@ export default function HOSCAACommitteePage() {
                 <div key={member.id} className="flex justify-center">
                   <CardContainer className="w-[400px]">
                     <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-8 border">
-                      {/* Photo Section */}
                       <CardItem translateZ="100" className="w-full mt-4">
                         <div className="relative w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-2 border-emerald-500">
                           {member.imageUrl ? (
@@ -302,7 +289,6 @@ export default function HOSCAACommitteePage() {
                         </div>
                       </CardItem>
 
-                      {/* Info Section */}
                       <CardItem
                         translateZ="50"
                         className="text-2xl font-bold text-neutral-600 dark:text-white text-center"
@@ -324,7 +310,6 @@ export default function HOSCAACommitteePage() {
                         {member.department}
                       </CardItem>
 
-                      {/* Social Links */}
                       <div className="flex justify-center gap-6 mt-6">
                         {member.email && (
                           <CardItem
@@ -358,7 +343,6 @@ export default function HOSCAACommitteePage() {
             </div>
           </div>
 
-          {/* Website Developers Section */}
           <div>
             <h2 className="text-2xl font-semibold mb-8 text-center text-white">Website Developers</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1600px] mx-auto">
@@ -366,7 +350,6 @@ export default function HOSCAACommitteePage() {
                 <div key={member.id} className="flex justify-center">
                   <CardContainer className="w-[400px]">
                     <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-8 border">
-                      {/* Photo Section */}
                       <CardItem translateZ="100" className="w-full mt-4">
                         <div className="relative w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-2 border-emerald-500">
                           {member.imageUrl ? (
@@ -384,8 +367,7 @@ export default function HOSCAACommitteePage() {
                           )}
                         </div>
                       </CardItem>
-
-                      {/* Info Section */}
+                          
                       <CardItem
                         translateZ="50"
                         className="text-2xl font-bold text-neutral-600 dark:text-white text-center"
@@ -407,7 +389,6 @@ export default function HOSCAACommitteePage() {
                         {member.department}
                       </CardItem>
 
-                      {/* Social Links */}
                       <div className="flex justify-center gap-6 mt-6">
                         {member.email && (
                           <CardItem
@@ -442,7 +423,6 @@ export default function HOSCAACommitteePage() {
           </div>
         </div>
 
-        {/* Additional Information */}
         <section className="mt-12 bg-gray-900/50 backdrop-blur-sm rounded-lg p-8 border border-white/[0.1]">
           <h2 className="text-2xl font-semibold mb-4 text-center text-white">About HOSCAA</h2>
           <div className="max-w-3xl mx-auto">

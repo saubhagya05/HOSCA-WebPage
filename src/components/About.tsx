@@ -2,8 +2,7 @@ import React, { Suspense } from 'react';
 import { MagicCard } from '@/components/magicui/magic-card';
 import Image from 'next/image';
 import { FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa';
-
-// Lazy load social icons to reduce initial bundle size
+  
 const SocialLinks = React.memo(({ socialLinks }: { socialLinks: Array<{ icon: any; url: string; label: string }> }) => (
   <div className="mt-8 flex gap-6">
     {socialLinks.map((social, index) => (
@@ -38,10 +37,8 @@ const About = () => {
 
   return (
     <div className="relative w-full overflow-hidden bg-gradient-to-b from-gray-500 via-amber-500 to-white py-24">
-      {/* Decorative gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-red-100/20 via-transparent to-gray-200/20 pointer-events-none" />
       
-      {/* Use will-change-transform to optimize animations */}
       <div className="relative z-10 flex flex-col items-center justify-center p-4 max-w-7xl mx-auto" style={{ willChange: 'transform' }}>
         <Suspense fallback={<div className="w-full max-w-4xl h-[300px] bg-gray-100 animate-pulse rounded-xl" />}>
           <MagicCard className="w-full max-w-4xl p-9 bg-white/80 backdrop-blur-sm rounded-xl shadow-lg hover:bg-white/90 transition-colors duration-300 border border-gray-100">

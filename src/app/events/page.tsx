@@ -1,7 +1,6 @@
 import { Metadata } from 'next'
 import { MagicCard } from '@/components/magicui/magic-card'
 import { ImagesSlider } from '@/components/ui/images-slider'
-import Image from 'next/image'
 import { Suspense } from 'react'
 
 export const metadata: Metadata = {
@@ -130,7 +129,6 @@ export default function EventsPage() {
           Our Events
         </h1>
         
-        {/* Upcoming Events */}
         {upcomingEvents.length > 0 && (
           <section className="mb-16">
             <h2 className="text-2xl md:text-3xl font-semibold mb-8 text-[#fa8a57] text-center">Upcoming Events</h2>
@@ -143,8 +141,7 @@ export default function EventsPage() {
             </div>
           </section>
         )}
-
-        {/* Past Events */}
+  
         {pastEvents.length > 0 && (
           <section>
             <h2 className="text-2xl md:text-3xl font-semibold mb-8 text-[#fa8a57] text-center">Past Events</h2>

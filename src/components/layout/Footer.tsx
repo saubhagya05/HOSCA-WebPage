@@ -33,7 +33,6 @@ const Footer = () => {
     <footer className="bg-gradient-to-b from-gray-900 to-gray-950 text-white">
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Left Section - HOSCA Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-4">
               <div className="relative w-16 h-16 rounded-full overflow-hidden bg-white">
@@ -65,7 +64,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Middle Section - Quick Links */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-red-400">Quick Links</h3>
             <ul className="grid grid-cols-1 gap-2">
@@ -84,7 +82,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Right Section - IITP Info */}
           <div className="space-y-4">
             <div>
               <h3 className="text-lg font-semibold text-red-400">Indian Institute of Technology, Patna</h3>
@@ -119,7 +116,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Copyright Section */}
       <div className="bg-gray-950 py-4">
         <div className="max-w-7xl mx-auto px-4 text-center text-gray-400">
           © {new Date().getFullYear()} IIT Patna. All rights reserved.

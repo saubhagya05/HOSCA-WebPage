@@ -17,13 +17,10 @@ export default function HeroSection() {
           className="object-cover"
           quality={100}
         />
-        {/* Enhanced gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-red-900/30" />
-        {/* Animated gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-shimmer" />
       </div>
-
-      {/* Content */}
+      
       <div className="relative h-full flex flex-col items-center justify-center text-white px-4">
         <motion.div 
           className="max-w-4xl mx-auto text-center"

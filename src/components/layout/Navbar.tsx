@@ -31,7 +31,6 @@ const Navbar = () => {
     { name: 'Gymkhana Committee', link: '/committee/gymkhana' },
   ];
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -45,7 +44,6 @@ const Navbar = () => {
     };
   }, []);
 
-  // Close mobile menu when route changes (you might want to add a router listener)
   const handleMobileNavClick = (hasDropdown = false) => {
     if (!hasDropdown) {
       setIsMenuOpen(false);
@@ -63,7 +61,6 @@ const Navbar = () => {
 
   return (
     <ResizableNavbar className="!top-0">
-      {/* Desktop Navigation */}
       <NavBody className="!min-w-full bg-gradient-to-r from-red-700 via-blue-400 to-gray-800 dark:from-gray-900 dark:via-red-600 dark:to-gray-800">
         <div className="flex items-center justify-between w-full">
           <NavbarLogo>
@@ -131,8 +128,7 @@ const Navbar = () => {
           </div>
         </div>
       </NavBody>
-
-      {/* Mobile Navigation */}
+            
       <MobileNav className="bg-gradient-to-r from-gray-500 via-red-400 to-gray-500 dark:from-gray-800 dark:via-red-600 dark:to-gray-800">
         <MobileNavHeader>
           <NavbarLogo>

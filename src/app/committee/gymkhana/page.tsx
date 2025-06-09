@@ -21,8 +21,8 @@ const committeeMembers: CommitteeMember[] = [
     position: 'Gymkhana Advisor',
     department: 'Student Affairs',
     email: 'gymkhana.advisor@iitp.ac.in',
-    imageUrl: '/committee/gymkhana-advisor.jpg', // Add actual image path
-    linkedinUrl: 'https://linkedin.com/in/gymkhana-advisor', // Add actual LinkedIn URL
+    imageUrl: '/committee/gymkhana-advisor.jpg', 
+    linkedinUrl: 'https://linkedin.com/in/gymkhana-advisor', 
   },
   {
     id: 2,
@@ -30,8 +30,8 @@ const committeeMembers: CommitteeMember[] = [
     position: 'General Secretary',
     department: '',
     email: 'gs.gymkhana@iitp.ac.in',
-    imageUrl: '/committee/New Folder/ChiragBhardwaj.JPG', // Fixed filename
-    linkedinUrl: 'https://linkedin.com/in/gs-gymkhana', // Add actual LinkedIn URL
+    imageUrl: '/committee/New Folder/ChiragBhardwaj.JPG', 
+    linkedinUrl: 'https://linkedin.com/in/gs-gymkhana', 
   },
   {
     id: 3,
@@ -39,8 +39,8 @@ const committeeMembers: CommitteeMember[] = [
     position: 'Cultural Secretary',
     department: 'Civil Engineering',
     email: 'cultural.secretary@iitp.ac.in',
-    imageUrl: '/committee/cultural-secretary.jpg', // Add actual image path
-    linkedinUrl: 'https://linkedin.com/in/cultural-secretary', // Add actual LinkedIn URL
+    imageUrl: '/committee/cultural-secretary.jpg', 
+    linkedinUrl: 'https://linkedin.com/in/cultural-secretary', 
   },
   {
     id: 4,
@@ -90,7 +90,6 @@ const committeeMembers: CommitteeMember[] = [
 ];
 
 export default function GymkhanaCommitteePage() {
-  // Separate members into different groups for layout
   const gymkhanaAdvisor = committeeMembers.find(member => member.position === 'Gymkhana Advisor');
   const generalSecretary = committeeMembers.find(member => member.position === 'General Secretary');
   const otherMembers = committeeMembers.filter(member => 
@@ -101,7 +100,6 @@ export default function GymkhanaCommitteePage() {
     <div key={member.id} className="flex justify-center">
       <CardContainer className="w-full">
         <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-6 border">
-          {/* Photo Section */}
           <CardItem translateZ="100" className="w-full mt-4">
             <div className="relative w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-2 border-emerald-500">
               {member.imageUrl ? (
@@ -120,7 +118,6 @@ export default function GymkhanaCommitteePage() {
             </div>
           </CardItem>
 
-          {/* Info Section */}
           <CardItem
             translateZ="50"
             className="text-xl font-bold text-neutral-600 dark:text-white text-center"
@@ -142,7 +139,6 @@ export default function GymkhanaCommitteePage() {
             {member.department}
           </CardItem>
 
-          {/* Social Links */}
           <div className="flex justify-center gap-4 mt-4">
             {member.email && (
               <CardItem
@@ -180,8 +176,7 @@ export default function GymkhanaCommitteePage() {
       
       <div className="container mx-auto px-4 py-8 relative z-10">
         <h1 className="text-4xl font-bold text-center mb-8 text-white">Gymkhana Committee</h1>
-
-        {/* Introduction */}
+      
         <section className="max-w-3xl mx-auto mb-12 text-center">
           <p className="text-lg text-gray-300">
             The Gymkhana Committee is responsible for managing and coordinating all student activities
@@ -190,23 +185,19 @@ export default function GymkhanaCommitteePage() {
           </p>
         </section>
         
-        {/* Committee Members Layout */}
         <section className="space-y-12">
-          {/* Top Card - Gymkhana Advisor */}
           {gymkhanaAdvisor && (
             <div className="max-w-md mx-auto">
               {renderMemberCard(gymkhanaAdvisor)}
             </div>
           )}
 
-          {/* Second Card - General Secretary */}
           {generalSecretary && (
             <div className="max-w-md mx-auto">
               {renderMemberCard(generalSecretary)}
             </div>
           )}
 
-          {/* Three rows of two cards each */}
           <div className="space-y-12">
             {Array.from({ length: Math.ceil(otherMembers.length / 2) }).map((_, rowIndex) => (
               <div key={rowIndex} className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -216,7 +207,6 @@ export default function GymkhanaCommitteePage() {
           </div>
         </section>
 
-        {/* Additional Information */}
         <section className="mt-12 bg-gray-900/50 backdrop-blur-sm rounded-lg p-8 border border-white/[0.1]">
           <h2 className="text-2xl font-semibold mb-4 text-center text-white">About Gymkhana</h2>
           <div className="max-w-3xl mx-auto">
