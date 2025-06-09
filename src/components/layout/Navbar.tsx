@@ -61,7 +61,7 @@ const Navbar = () => {
 
   return (
     <ResizableNavbar className="!top-0">
-      <NavBody className="!min-w-full bg-gradient-to-r from-red-700 via-blue-400 to-gray-800 dark:from-gray-900 dark:via-red-600 dark:to-gray-800">
+      <NavBody className="!min-w-full bg-gradient-to-r from-gray-900 to-gray-950 dark:from-gray-900 dark:via-red-600 dark:to-gray-800">
         <div className="flex items-center justify-between w-full">
           <NavbarLogo>
             <Image
@@ -69,7 +69,7 @@ const Navbar = () => {
               alt="HOSCA Logo"
               width={50}
               height={50}
-              className="object-contain"
+              className="object-contain bg-amber-500 rounded-4xl"
               priority
             />
             <span className="text-2xl font-bold text-white">HOSCA</span>
