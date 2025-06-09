@@ -121,6 +121,28 @@ export function ExpandableCardDemo() {
                       ? active.content()
                       : active.content}
                   </motion.div>
+                  
+                  {/* Explore More Button */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 20 }}
+                    transition={{ delay: 0.2 }}
+                    className="absolute bottom-4 right-4"
+                  >
+                    <a
+                      href={active.ctaLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <span className="text-sm font-medium">Explore More</span>
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  </motion.div>
                 </div>
               </div>
             </motion.div>
