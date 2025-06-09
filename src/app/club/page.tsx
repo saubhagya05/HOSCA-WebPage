@@ -2,7 +2,6 @@
 
 import { ExpandableCardDemo } from "@/components/ui/ExpandableCard";
 import { Cover } from "@/components/ui/cover";
-import { DotBackgroundDemo } from "@/components/ui/dotbackground";
 
 export default function ClubsPage() {
   return (
