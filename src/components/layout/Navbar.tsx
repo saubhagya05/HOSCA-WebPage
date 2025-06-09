@@ -129,7 +129,7 @@ const Navbar = () => {
         </div>
       </NavBody>
             
-      <MobileNav className="bg-gradient-to-r from-gray-500 via-red-400 to-gray-500 dark:from-gray-800 dark:via-red-600 dark:to-gray-800">
+      <MobileNav className="bg-gradient-to-r from-gray-900 to-gray-950 dark:from-gray-800 dark:via-red-600 dark:to-gray-800">
         <MobileNavHeader>
           <NavbarLogo>
             <Image
@@ -155,7 +155,7 @@ const Navbar = () => {
                 <div key={item.name} className="space-y-1">
                   <button
                     onClick={handleCommitteeDropdownToggle}
-                    className="flex items-center justify-between w-full text-left px-4 py-3 text-white hover:text-gray-100 hover:bg-white/10 transition-colors duration-150 font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+                    className="flex items-center justify-between w-full text-left px-4 py-3 text-black hover:text-red-500 hover:bg-white/10 transition-colors duration-150 font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
                     aria-expanded={isCommitteeDropdownOpen ? "true" : "false"}
                   >
                     <span>{item.name}</span>
@@ -177,7 +177,7 @@ const Navbar = () => {
                         <Link
                           key={subItem.link}
                           href={subItem.link}
-                          className="block px-4 py-2 text-white hover:text-gray-100 hover:bg-white/10 transition-colors duration-150 font-medium rounded-md"
+                          className="block px-4 py-2 text-black hover:text-gray-100 hover:bg-red-500 transition-colors duration-150 font-medium rounded-md"
                           onClick={handleCommitteeItemClick}
                         >
                           {subItem.name}
@@ -190,7 +190,7 @@ const Navbar = () => {
                 <Link
                   key={item.link}
                   href={item.link}
-                  className="block px-4 py-3 text-white hover:text-gray-100 hover:bg-white/10 transition-colors duration-150 font-medium rounded-md"
+                  className="block px-4 py-3 text-black hover:text-red-500 hover:bg-white/10 transition-colors duration-150 font-medium rounded-md"
                   onClick={() => handleMobileNavClick()}
                 >
                   {item.name}
