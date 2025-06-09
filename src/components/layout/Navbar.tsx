@@ -21,14 +21,9 @@ const Navbar = () => {
   const navItems = [
     { name: 'Home', link: '/' },
     { name: 'Clubs', link: '/club' },
-    { name: 'Committee', link: '#', isDropdown: true },
+    { name: 'Gymkhana Committee', link: '/committee/gymkhana' },
     { name: 'Gallery', link: '/gallery' },
     { name: 'Events', link: '/events' },
-  ];
-
-  const committeeItems = [
-    { name: 'HOSCA Committee', link: '/committee/hoscaa' },
-    { name: 'Gymkhana Committee', link: '/committee/gymkhana' },
   ];
 
   useEffect(() => {
@@ -61,61 +56,23 @@ const Navbar = () => {
 
   return (
     <ResizableNavbar className="!top-0">
-      <NavBody className="!min-w-full bg-gradient-to-r from-gray-900 to-gray-950 dark:from-gray-900 dark:via-red-600 dark:to-gray-800">
-        <div className="flex items-center justify-between w-full">
-          <NavbarLogo>
-            <Image
-              src="/Hosca_logo.png"
-              alt="HOSCA Logo"
-              width={50}
-              height={50}
-              className="object-contain bg-amber-500 rounded-4xl"
-              priority
-            />
-            <span className="text-2xl font-bold text-white">HOSCA</span>
-          </NavbarLogo>
+      <div className="hidden lg:flex w-full">
+        <NavBody className="!min-w-full bg-gradient-to-r from-gray-900 to-gray-950 dark:from-gray-900 dark:via-red-600 dark:to-gray-800">
+          <div className="flex items-center justify-between w-full">
+            <NavbarLogo>
+              <Image
+                src="/Hosca_logo.png"
+                alt="HOSCA Logo"
+                width={50}
+                height={50}
+                className="object-contain bg-amber-500 rounded-4xl"
+                priority
+              />
+              <span className="text-2xl font-bold text-white">HOSCA</span>
+            </NavbarLogo>
 
-          <div className="hidden lg:flex items-center space-x-4">
-            {navItems.map((item) => (
-              item.isDropdown ? (
-                <div key={item.name} className="relative" ref={dropdownRef}>
-                  <button
-                    onClick={handleCommitteeDropdownToggle}
-                    className="flex items-center px-4 py-2 text-white hover:text-gray-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 rounded-md"
-                    aria-expanded={isCommitteeDropdownOpen ? "true" : "false"}
-                    aria-haspopup="true"
-                  >
-                    {item.name}
-                    <svg
-                      className={`ml-1 h-4 w-4 transition-transform duration-200 ${
-                        isCommitteeDropdownOpen ? 'rotate-180' : ''
-                      }`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
-                  
-                  {isCommitteeDropdownOpen && (
-                    <div className="absolute right-0 mt-2 w-56 rounded-lg shadow-lg bg-white/95 backdrop-blur-sm ring-1 ring-black ring-opacity-5 z-50 transform transition-all duration-200 ease-out">
-                      <div className="py-2">
-                        {committeeItems.map((subItem) => (
-                          <Link
-                            key={subItem.link}
-                            href={subItem.link}
-                            className="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-700 transition-colors duration-150 first:rounded-t-lg last:rounded-b-lg"
-                            onClick={() => setIsCommitteeDropdownOpen(false)}
-                          >
-                            {subItem.name}
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </div>
-              ) : (
+            <div className="hidden lg:flex items-center space-x-4">
+              {navItems.map((item) => (
                 <Link
                   key={item.link}
                   href={item.link}
@@ -123,70 +80,34 @@ const Navbar = () => {
                 >
                   {item.name}
                 </Link>
-              )
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </NavBody>
-            
-      <MobileNav className="bg-gradient-to-r from-gray-900 to-gray-950 dark:from-gray-800 dark:via-red-600 dark:to-gray-800">
-        <MobileNavHeader>
-          <NavbarLogo>
-            <Image
-              src="/Hosca_logo.png"
-              alt="HOSCA Logo"
-              width={40}
-              height={40}
-              className="object-contain"
-              priority
+        </NavBody>
+      </div>
+      <div className="flex lg:hidden w-full">
+        <MobileNav className="bg-gradient-to-r from-gray-900 to-gray-950 dark:from-gray-800 dark:via-red-600 dark:to-gray-800">
+          <MobileNavHeader>
+            <NavbarLogo>
+              <Image
+                src="/Hosca_logo.png"
+                alt="HOSCA Logo"
+                width={40}
+                height={40}
+                className="object-contain"
+                priority
+              />
+              <span className="font-medium text-white">HOSCA</span>
+            </NavbarLogo>
+            <MobileNavToggle 
+              isOpen={isMenuOpen} 
+              onClick={() => setIsMenuOpen(!isMenuOpen)} 
             />
-            <span className="font-medium text-white">HOSCA</span>
-          </NavbarLogo>
-          <MobileNavToggle 
-            isOpen={isMenuOpen} 
-            onClick={() => setIsMenuOpen(!isMenuOpen)} 
-          />
-        </MobileNavHeader>
+          </MobileNavHeader>
 
-        <MobileNavMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)}>
-          <div className="flex flex-col space-y-1 w-full">
-            {navItems.map((item) => (
-              item.isDropdown ? (
-                <div key={item.name} className="space-y-1">
-                  <button
-                    onClick={handleCommitteeDropdownToggle}
-                    className="flex items-center justify-between w-full text-left px-4 py-3 text-black hover:text-red-500 hover:bg-white/10 transition-colors duration-150 font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
-                    aria-expanded={isCommitteeDropdownOpen ? "true" : "false"}
-                  >
-                    <span>{item.name}</span>
-                    <svg
-                      className={`h-4 w-4 transition-transform duration-200 ${
-                        isCommitteeDropdownOpen ? 'rotate-180' : ''
-                      }`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
-                  
-                  {isCommitteeDropdownOpen && (
-                    <div className="pl-4 space-y-1 border-l-2 border-red-200 ml-4">
-                      {committeeItems.map((subItem) => (
-                        <Link
-                          key={subItem.link}
-                          href={subItem.link}
-                          className="block px-4 py-2 text-black hover:text-gray-100 hover:bg-red-500 transition-colors duration-150 font-medium rounded-md"
-                          onClick={handleCommitteeItemClick}
-                        >
-                          {subItem.name}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ) : (
+          <MobileNavMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)}>
+            <div className="flex flex-col space-y-1 w-full">
+              {navItems.map((item) => (
                 <Link
                   key={item.link}
                   href={item.link}
@@ -195,11 +116,11 @@ const Navbar = () => {
                 >
                   {item.name}
                 </Link>
-              )
-            ))}
-          </div>
-        </MobileNavMenu>
-      </MobileNav>
+              ))}
+            </div>
+          </MobileNavMenu>
+        </MobileNav>
+      </div>
     </ResizableNavbar>
   );
 };

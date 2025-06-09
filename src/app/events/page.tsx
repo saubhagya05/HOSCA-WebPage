@@ -1,12 +1,6 @@
-import { Metadata } from 'next'
 import { MagicCard } from '@/components/magicui/magic-card'
 import { ImagesSlider } from '@/components/ui/images-slider'
 import { Suspense } from 'react'
-
-export const metadata: Metadata = {
-  title: 'Events - HOSCA IIT Patna',
-  description: 'Upcoming and past events organized by HOSCA at IIT Patna',
-}
 
 interface EventImage {
   src: string;

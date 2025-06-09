@@ -127,42 +127,42 @@ export function ExpandableCardDemo() {
           </div>
         ) : null}
       </AnimatePresence>
-      <ul className="max-w-2xl mx-auto w-full gap-4">
+      <ul className="max-w-2xl mx-auto w-full gap-4 px-4 sm:px-6 lg:px-8">
         {cards.map((card, index) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
             key={`card-${card.title}-${id}`}
             onClick={() => setActive(card)}
-            className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer max-h-[200px] overflow-hidden group"
+            className="p-4 sm:p-6 flex flex-col md:flex-row justify-between items-center hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer mb-4 md:max-h-[200px] md:overflow-hidden"
           >
             <div className="flex gap-4 flex-col md:flex-row w-full">
-              <motion.div layoutId={`image-${card.title}-${id}`} className="flex-shrink-0">
+              <motion.div layoutId={`image-${card.title}-${id}`} className="flex-shrink-0 mx-auto md:mx-0">
                 <img
                   width={100}
                   height={100}
                   src={card.src}
                   alt={card.title}
-                  className="h-40 w-40 md:h-14 md:w-14 rounded-lg object-cover object-top"
+                  className="h-32 w-32 sm:h-36 sm:w-36 md:h-14 md:w-14 rounded-lg object-cover object-top"
                 />
               </motion.div>
-              <div className="flex-grow min-w-0">
+              <div className="flex-grow min-w-0 text-center md:text-left">
                 <motion.h3
                   layoutId={`title-${card.title}-${id}`}
-                  className="font-medium text-neutral-800 dark:text-neutral-200 text-center md:text-left truncate"
+                  className="font-medium text-neutral-800 dark:text-neutral-200 text-center md:text-left truncate text-lg sm:text-xl md:text-base"
                 >
                   {card.title}
                 </motion.h3>
                 <motion.p
                   layoutId={`description-${card.description}-${id}`}
-                  className="text-neutral-600 dark:text-neutral-400 text-center md:text-left truncate"
+                  className="text-neutral-600 dark:text-neutral-400 text-center md:text-left truncate text-sm sm:text-base md:text-sm"
                 >
                   {card.description}
                 </motion.p>
               </div>
             </div>
-            <div className="flex items-center gap-3 mt-4 md:mt-0">
+            <div className="flex items-center justify-center gap-3 mt-4 md:mt-0 w-full md:w-auto">
               <motion.div
-                className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                className="flex gap-2 opacity-100 transition-opacity duration-300"
                 onClick={(e) => e.stopPropagation()}
               >
                 <a
