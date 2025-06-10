@@ -70,7 +70,7 @@ export function ExpandableCardDemo() {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-[500px]  h-full md:h-fit md:max-h-[90%]  flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
+              className="w-full max-w-[500px] h-full md:h-fit md:max-h-[90vh] flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
             >
               <motion.div layoutId={`image-${active.title}-${id}`}>
                 <img
@@ -82,7 +82,7 @@ export function ExpandableCardDemo() {
                 />
               </motion.div>
 
-              <div>
+              <div className="flex flex-col h-full">
                 <div className="flex justify-between items-start p-4">
                   <div className="">
                     <motion.h3
@@ -109,41 +109,40 @@ export function ExpandableCardDemo() {
                     <IoPlay className="w-4 h-4" />
                   </motion.a>
                 </div>
-                <div className="pt-4 relative px-4">
-                  <motion.div
-                    layout
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    className="text-neutral-600 text-xs md:text-sm lg:text-base max-h-[300px] overflow-y-auto pr-2 pb-10 flex flex-col items-start gap-4 dark:text-neutral-400 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent hover:scrollbar-thumb-gray-400"
+                
+                <motion.div
+                  layout
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="flex-1 overflow-y-auto px-4 pb-20 text-neutral-600 text-xs md:text-sm lg:text-base dark:text-neutral-400 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent hover:scrollbar-thumb-gray-400"
+                >
+                  {typeof active.content === "function"
+                    ? active.content()
+                    : active.content}
+                </motion.div>
+                
+                {/* Explore More Button */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 20 }}
+                  transition={{ delay: 0.2 }}
+                  className="absolute bottom-4 right-4"
+                >
+                  <a
+                    href={active.ctaLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                    onClick={(e) => e.stopPropagation()}
                   >
-                    {typeof active.content === "function"
-                      ? active.content()
-                      : active.content}
-                  </motion.div>
-                  
-                  {/* Explore More Button */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 20 }}
-                    transition={{ delay: 0.2 }}
-                    className="absolute bottom-4 right-4"
-                  >
-                    <a
-                      href={active.ctaLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <span className="text-sm font-medium">Explore More</span>
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
-                    </a>
-                  </motion.div>
-                </div>
+                    <span className="text-sm font-medium">Explore More</span>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                </motion.div>
               </div>
             </motion.div>
           </div>
@@ -259,7 +258,7 @@ const cards = [
     title: "Yavanika",
     src: "/club/yavanika.png",
     ctaText: "Learn More",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaLink: "/club/yavanika",
     content: () => {
       return (
         <p>
@@ -273,7 +272,7 @@ const cards = [
     title: "Exousia",
     src: "/club/exousia.jpg",
     ctaText: "Learn More",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaLink: "/club/exousia",
     content: () => {
       return (
         <p>
@@ -288,7 +287,7 @@ const cards = [
     title: "Aria",
     src: "/club/aria.jpg",
     ctaText: "Learn More",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaLink: "/club/aria",
     content: () => {
       return (
         <p>
@@ -302,7 +301,7 @@ const cards = [
     title: "Pixxel",
     src: "/club/Pixxel.jpeg",
     ctaText: "Learn More",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaLink: "/club/pixxel",
     content: () => {
       return (
         <p>
@@ -316,7 +315,7 @@ const cards = [
     title: "HOOT",
     src: "/club/hoot.jpg",
     ctaText: "Learn More",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaLink: "/club/hoot",
     content: () => {
       return (
         <p>
@@ -330,7 +329,7 @@ const cards = [
     title: "Quiz Club",
     src: "/club/quiz.jpg",
     ctaText: "Learn More",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaLink: "/club/quiz",
     content: () => {
       return (
         <p>
@@ -344,7 +343,7 @@ const cards = [
     title: "Syahi",
     src: "/club/syahi.jpg",
     ctaText: "Learn More",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaLink: "/club/syahi",
     content: () => {
       return (
         <p>
@@ -358,7 +357,7 @@ const cards = [
     title: "Epicurean",
     src: "/club/epicurean.png",
     ctaText: "Learn More",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaLink: "/club/epicurean",
     content: () => {
       return (
         <p>
@@ -372,7 +371,7 @@ const cards = [
     title: "HexaChrome",
     src: "/club/HexaChrome.jpg",
     ctaText: "Learn More",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaLink: "/club/hexachrome",
     content: () => {
       return (
         <p>
@@ -386,7 +385,7 @@ const cards = [
     title: "Vincetroke",
     src: "/club/Vincetroke.jpg",
     ctaText: "Learn More",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaLink: "/club/vincetroke",
     content: () => {
       return (
         <p>
@@ -400,7 +399,7 @@ const cards = [
     title: "Anime Club",
     src: "/club/anime.png",
     ctaText: "Learn More",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaLink: "/club/anime",
     content: () => {
       return (
         <p>
