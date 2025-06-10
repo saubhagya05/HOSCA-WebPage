@@ -1,7 +1,7 @@
 'use client';
 
 import { BackgroundBeams } from "@/components/ui/background-beams";
-import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
+import { CardContainer, CardBody} from "@/components/ui/3d-card";
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 
 export default function LiteraryPage() {
