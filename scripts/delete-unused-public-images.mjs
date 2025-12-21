@@ -1,14 +1,3 @@
-#!/usr/bin/env node
-
-// Delete images under public/ listed in a text file (e.g., unused-public-images.txt)
-// Also deletes their .webp and .avif sidecars if present.
-// Usage:
-//   node scripts/delete-unused-public-images.mjs [--list <path>] [--quarantine]
-// Defaults:
-//   --list unused-public-images.txt (at repo root)
-//   Without --quarantine, files are permanently deleted. With --quarantine, files
-//   are moved to public/.quarantine/ preserving relative path structure.
-
 import fs from 'node:fs/promises';
 import fssync from 'node:fs';
 import path from 'node:path';
@@ -27,9 +16,7 @@ const QUARANTINE = !!args.get('quarantine');
 const QUAR_DIR = path.join(PUBLIC_DIR, '.quarantine');
 
 function log(...m) { console.log('[delete-unused]', ...m); }
-
 async function ensureDir(dir) { await fs.mkdir(dir, { recursive: true }); }
-
 async function fileExists(p) { try { await fs.access(p); return true; } catch { return false; } }
 
 function sidecars(abs) {
@@ -41,7 +28,9 @@ async function removeFile(abs) {
   try {
     await fs.unlink(abs);
     log('deleted', path.relative(PUBLIC_DIR, abs));
-  } catch (e) {
+  } 
+  
+  catch (e) {
     if (e?.code !== 'ENOENT') log('warn could not delete', abs, e.message || e);
   }
 }
@@ -53,7 +42,9 @@ async function moveFile(abs) {
   try {
     await fs.rename(abs, dest);
     log('quarantined', rel, '->', path.relative(PUBLIC_DIR, dest));
-  } catch (e) {
+  } 
+  
+  catch (e) {
     if (e?.code !== 'ENOENT') log('warn could not move', rel, e.message || e);
   }
 }
@@ -89,9 +80,7 @@ async function main() {
 
   let count = 0;
   for (const abs of targets) {
-    // main file
     await actOn(abs);
-    // sidecars
     for (const sc of sidecars(abs)) {
       if (await fileExists(sc)) await actOn(sc);
     }
