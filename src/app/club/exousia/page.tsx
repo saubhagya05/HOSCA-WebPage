@@ -234,8 +234,7 @@ export default function ExousiaPage() {
           </div>
 
           <div className="mb-16">
-            <ImageGrid
-           images={[
+          <ImageGrid images={[
             "/ClubPages/Exousia/IMG-20250613-WA0026.jpg",
             "/ClubPages/Exousia/IMG-20250613-WA0027.jpg",
             "/ClubPages/Exousia/IMG-20250613-WA0029.jpg",
@@ -256,13 +255,10 @@ export default function ExousiaPage() {
             "/ClubPages/Exousia/IMG-20250613-WA0044.jpg",
             "/ClubPages/Exousia/IMG-20250613-WA0045.jpg",
             "/ClubPages/Exousia/IMG-20250613-WA0046.jpg",
-             ]}
-            className="max-w-4xl mx-auto"
-/>
-
+            ]} className="max-w-4xl mx-auto"/>
           </div>
         </div>
-        {/* Members Section */}
+
         <section className="space-y-12">
           <h2 className="text-4xl font-bold text-center mb-12 text-orange-500">
             Our Team
@@ -281,10 +277,8 @@ export default function ExousiaPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
             {ExousiaMembers.slice(2).map((member) => renderMemberCard(member))}
           </div>
-          
         </section>
 
-        {/* Social Links */}
         <div className="flex justify-center gap-6 mt-12">
           <a
             href="https://www.facebook.com/DanceClubIITPatna/"
