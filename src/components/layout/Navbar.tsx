@@ -43,13 +43,14 @@ const Navbar = () => {
     <nav className="bg-gradient-to-r from-gray-900 to-gray-950 backdrop-blur-sm border-b border-gray-800 top-0 sticky w-full z-50 shadow-lg">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <Image src="/home/hosca.png" width={0} height={0} sizes="100vw" alt="Logo" className="h-12 w-auto object-contain rounded-full"/>
+          <Image src="/home/hosca.png" width={48} height={48} alt="Logo" className="h-12 w-auto object-contain rounded-full"/>
           <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">HOSCA</span>
         </Link>
 
         <button
           type="button"
           className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-gray-800/50 transition-all duration-300"
+          aria-label="Toggle navigation menu"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 17 14">

@@ -1,5 +1,5 @@
 import { MagicCard } from '@/components/magicui/magic-card'
-import { ImagesSlider } from '@/components/ui/images-slider'
+import { OptimizedImagesSlider } from '@/components/ui/images-slider-optimized'
 import { Suspense } from 'react'
 
 interface EventImage {
@@ -70,7 +70,7 @@ const EventCard = ({ event }: { event: Event }) => {
   const imageSection = (
     <div className="w-full md:w-1/2 h-[400px] relative rounded-lg overflow-hidden shadow-4-strong">
       <Suspense fallback={<div className="w-full h-full bg-gray-800 animate-pulse" />}>
-        <ImagesSlider
+        <OptimizedImagesSlider
           images={event.images.map((img, index) => ({
             ...img,
             fetchPriority: index === 0 ? "high" : "auto",
@@ -88,7 +88,7 @@ const EventCard = ({ event }: { event: Event }) => {
               <p className="text-sm opacity-80">{event.location}</p>
             )}
           </div>
-        </ImagesSlider>
+        </OptimizedImagesSlider>
       </Suspense>
     </div>
   );

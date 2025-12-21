@@ -34,6 +34,8 @@ export const Card = React.memo(
           hovered === index ? "scale-110 brightness-110" : "scale-100 brightness-100"
         )}
         sizes="(max-width: 768px) 100vw, 33vw"
+        loading="lazy"
+        fetchPriority="low"
       />
 
     </div>

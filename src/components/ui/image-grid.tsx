@@ -58,6 +58,7 @@ export const ImageGrid = ({
               alt={`Gallery image ${currentIndex + index + 1}`}
               fill
               loading="lazy"
+              sizes="(max-width: 768px) 50vw, 25vw"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
             />
           </div>
@@ -116,7 +117,7 @@ export const ImageGrid = ({
                   fill
                   className="object-contain"
                   sizes="(max-width: 768px) 100vw, 80vh"
-                  priority
+                  loading="lazy"
                 />
 
                 {images.length > 1 && (

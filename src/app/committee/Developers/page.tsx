@@ -176,6 +176,9 @@ export default function DevelopersPage() {
                   src={member.imageUrl}
                   alt={member.name}
                   className="w-full h-full object-cover"
+                  sizes="128px"
+                  loading="lazy"
+                  fetchPriority="low"
                 />
               ) : (
                 <div className="w-full h-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">

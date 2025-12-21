@@ -75,6 +75,9 @@ export default function GymkhanaCommitteePage() {
                   fill
                   src={member.imageUrl}
                   alt={member.name}
+                  sizes="128px"
+                  loading="lazy"
+                  fetchPriority="low"
                   className="w-full h-full object-cover"
                 />
               ) : (
