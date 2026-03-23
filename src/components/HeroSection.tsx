@@ -50,7 +50,7 @@ export default function HeroSection() {
             <React.Suspense fallback={null}>
               <VideoText
                 className="w-full h-[160px] sm:h-[200px] md:h-[250px] lg:h-[350px] font-bold text-transparent animate-gradient-x"
-                src="/video/hosca-bg.mp4"
+                src="/video/output.mp4"
                 fontSize="clamp(30px, 25vw, 350px)"
                 style={{
                   WebkitTextStroke: "1px white",
