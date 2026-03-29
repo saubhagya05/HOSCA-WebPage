@@ -1,20 +1,13 @@
-'use client';
-import React, { useEffect, useState } from 'react';
-import Link from 'next/link';
-import Head from 'next/head';
-import { motion } from 'framer-motion';
-import { VideoText } from '@/components/magicui/video-text';
+"use client";
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { VideoText } from "@/components/magicui/video-text";
 
 const FlipText = React.lazy(() =>
-  import('@/components/magicui/flip-text').then((module) => ({
+  import("@/components/magicui/flip-text").then((module) => ({
     default: module.FlipText,
-  }))
-);
-
-const Particles = React.lazy(() =>
-  import('@/components/magicui/particles').then((module) => ({
-    default: module.Particles,
-  }))
+  })),
 );
 
 export default function HeroSection() {
@@ -23,75 +16,72 @@ export default function HeroSection() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setShowEnhancements(true);
-    }, 500); 
+    }, 500);
 
     return () => clearTimeout(timeout);
   }, []);
 
   return (
-    <section className="relative w-full min-h-screen bg-black overflow-hidden text-white">
-      <Head>
-        <link rel="preload" href="/video/hosca-bg.mp4" as="video" type="video/mp4" />
-      </Head>
-
-      {showEnhancements && (
-        <React.Suspense fallback={null}>
-          <Particles className="absolute inset-0 z-0" quantity={60} color="#999999" size={0.7} />
-        </React.Suspense>
-      )}
-
-      <div className="absolute inset-0 z-10 pointer-events-none">
-        <div className="w-full h-full bg-gradient-to-r from-white/10 via-white/5 to-white/10 blur-3xl opacity-40" />
+    <section className="relative w-full min-h-screen overflow-hidden text-white">
+      <div
+        className="pointer-events-none absolute inset-0 z-[5] opacity-[0.42]"
+        aria-hidden
+      >
+        <div className="h-full w-full bg-gradient-to-r from-sky-500/10 via-white/5 to-indigo-500/10 blur-3xl" />
       </div>
 
-      <div className="relative z-20 flex flex-col items-center justify-center px-4 py-24 min-h-screen space-y-8">
-        <div className="w-full max-w-[90vw] flex justify-center items-center">
+      <div className="relative z-20 flex min-h-screen flex-col items-center justify-center space-y-8 px-4 py-24">
+        <div className="flex w-full max-w-[90vw] items-center justify-center">
+          {showEnhancements && (
+            <div className="hero-hosca-glow-static w-full">
+              <React.Suspense fallback={null}>
+                <VideoText
+                  className="h-[160px] w-full font-bold text-transparent sm:h-[200px] md:h-[250px] lg:h-[350px]"
+                  src="/video/huscabg-vid.mp4"
+                  fontSize="clamp(30px, 25vw, 350px)"
+                  style={{
+                    WebkitTextStroke: "1px rgba(255,255,255,0.85)",
+                  }}
+                >
+                  HOSCA
+                </VideoText>
+              </React.Suspense>
+            </div>
+          )}
+        </div>
+
+        <div className="space-y-2 overflow-hidden px-4 text-center leading-tight sm:px-6 md:px-8">
           {showEnhancements && (
             <React.Suspense fallback={null}>
-              <VideoText
-                className="w-full h-[160px] sm:h-[200px] md:h-[250px] lg:h-[350px] font-bold text-transparent animate-gradient-x"
-                src="/video/output.mp4"
-                fontSize="clamp(30px, 25vw, 350px)"
-                style={{
-                  WebkitTextStroke: "1px white",
-                  filter: "drop-shadow(0 0 6px white)",
-                }}
-              >
-                HOSCA
-              </VideoText>
+              <FlipText className="animate-gradient-x-slow bg-gradient-to-r from-zinc-300 via-white to-zinc-300 bg-clip-text text-sm font-medium tracking-tight text-transparent sm:text-xl md:text-2xl lg:text-3xl">
+                The House Of Socio-Cultural
+              </FlipText>
+              <FlipText className="animate-gradient-x-slow bg-gradient-to-r from-zinc-300 via-white to-zinc-300 bg-clip-text text-sm font-medium tracking-tight text-transparent sm:text-xl md:text-2xl lg:text-3xl">
+                Affairs
+              </FlipText>
             </React.Suspense>
           )}
         </div>
 
-        <div className="px-4 sm:px-6 md:px-8 text-center leading-tight space-y-2 overflow-hidden">
-          <FlipText className="text-sm sm:text-xl md:text-2xl lg:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-gray-300 via-white to-gray-300 font-medium animate-gradient-x-slow tracking-tight">
-            The House Of Socio-Cultural
-          </FlipText>
-          <FlipText className="text-sm sm:text-xl md:text-2xl lg:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-gray-300 via-white to-gray-300 font-medium animate-gradient-x-slow tracking-tight">
-            Affairs
-          </FlipText>
-        </div>
-
-
         <motion.div
-          className="flex flex-col sm:flex-row justify-center gap-6"
+          className="flex flex-col justify-center gap-6 sm:flex-row"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
         >
           <Link
             href="/events"
-            className="group relative px-8 py-4 rounded-full overflow-hidden bg-gradient-to-r from-red-600 to-red-800 text-white text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+            className="group relative overflow-hidden rounded-full bg-gradient-to-r from-red-600 to-red-800 px-8 py-4 text-lg font-medium text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
           >
             <span className="relative z-10">View Events</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-red-700 to-red-900 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-gradient-to-r from-red-700 to-red-900 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
           </Link>
           <Link
             href="/club"
-            className="group relative px-8 py-4 rounded-full overflow-hidden bg-white/10 backdrop-blur-sm text-white text-lg font-medium border-2 border-white/20 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+            className="group relative overflow-hidden rounded-full border-2 border-white/25 bg-white/5 px-8 py-4 text-lg font-medium text-white shadow-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-white/40 hover:shadow-xl"
           >
             <span className="relative z-10">Learn More</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-gradient-to-r from-white/15 to-white/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
           </Link>
         </motion.div>
       </div>

@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+html {
+  scroll-behavior: smooth;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -225,6 +229,40 @@
 
 .animate-shimmer {
   animation: shimmer 3s infinite;
+}
+
+/* Hero HOSCA — fixed soft white glow (no animation) */
+.hero-hosca-glow-static {
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.75))
+    drop-shadow(0 0 20px rgba(255, 255, 255, 0.45))
+    drop-shadow(0 0 42px rgba(255, 255, 255, 0.2));
+}
+
+/* Club photo reels — seamless loop (duplicated track = 50% shift) */
+@keyframes reel-marquee-ltr {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes reel-marquee-rtl {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-reel-ltr {
+  animation: reel-marquee-ltr linear infinite;
+}
+
+.animate-reel-rtl {
+  animation: reel-marquee-rtl linear infinite;
 }
 
 /* HyperText Animation */

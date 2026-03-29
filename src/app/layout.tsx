@@ -19,9 +19,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <div className="flex flex-col min-h-screen">
+    <html lang="en" className="dark">
+      <body
+        className={`${inter.className} min-h-screen bg-[#030508] text-zinc-100 antialiased`}
+      >
+        <div className="flex min-h-screen flex-col">
           <Navbar />
           <main className="flex-grow">
             {children}

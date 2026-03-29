@@ -136,7 +136,7 @@ export function ExpandableCardDemo() {
                 layoutId={`button-${active.title}-${id}`}
                 href={active.ctaLink}
                 target="_blank"
-                className="p-2 rounded-full bg-green-500 text-white flex-shrink-0 transition-colors duration-300"
+                className="p-2 rounded-full bg-zinc-600 text-zinc-100 flex-shrink-0 border border-zinc-500/50 transition-colors duration-300 hover:bg-emerald-600 hover:text-white hover:border-emerald-500/50"
                 aria-label="View details"
                 exit={{ 
                   opacity: 0,
@@ -279,7 +279,7 @@ export function ExpandableCardDemo() {
                     href={card.facebookLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 rounded-full bg-gray-100 hover:bg-[#1877F2] hover:text-white transition-colors duration-300"
+                    className="p-2 rounded-full bg-zinc-600 text-zinc-200 border border-zinc-500/50 hover:bg-[#1877F2] hover:text-white hover:border-[#1877F2]/60 transition-colors duration-300"
                     aria-label="Facebook"
                   >
                     <FaFacebook className="w-4 h-4" />
@@ -290,7 +290,7 @@ export function ExpandableCardDemo() {
                     href={card.instagramLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 rounded-full bg-gray-100 hover:bg-[#E1306C] hover:text-white transition-colors duration-300"
+                    className="p-2 rounded-full bg-zinc-600 text-zinc-200 border border-zinc-500/50 hover:bg-[#E1306C] hover:text-white hover:border-[#E1306C]/60 transition-colors duration-300"
                     aria-label="Instagram"
                   >
                     <FaInstagram className="w-4 h-4" />
@@ -299,7 +299,7 @@ export function ExpandableCardDemo() {
               </motion.div>
               <motion.button
                 layoutId={`button-${card.title}-${id}`}
-                className="p-2 rounded-full bg-gray-100 hover:bg-green-500 hover:text-white text-black flex-shrink-0 transition-colors duration-300"
+                className="p-2 rounded-full bg-zinc-600 text-zinc-200 border border-zinc-500/50 hover:bg-emerald-600 hover:text-white hover:border-emerald-500/50 flex-shrink-0 transition-colors duration-300"
                 aria-label="View details"
               >
                 <IoPlay className="w-4 h-4" />

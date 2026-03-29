@@ -187,7 +187,7 @@ export default function YavanikaPage() {
               <h2 className="text-2xl font-bold text-neutral-700 dark:text-white mb-4">
                 About Yavanika
               </h2>
-              <p className="text-neutral-600 dark:text-neutral-300">
+              <p className="text-neutral-200 dark:text-neutral-300">
                 Yavanika is the dramatics society and one of the oldest clubs of
                 IIT Patna. With talent and feeling like of a movie actor, it makes the journey
                 superexcited and memorable. From stage plays to street performances, Yavanika brings stories to life and fuels the dramatic spirit of the campus.

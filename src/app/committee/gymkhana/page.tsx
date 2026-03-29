@@ -115,7 +115,7 @@ export default function GymkhanaCommitteePage() {
                 translateZ={20}
                 as="a"
                 href={`mailto:${member.email}`}
-                className="p-2 rounded-full bg-gray-100 hover:bg-red-500 hover:text-white transition-colors duration-300"
+                className="p-2 rounded-full bg-zinc-600 text-zinc-200 border border-zinc-500/50 hover:bg-red-500 hover:text-white hover:border-red-400/50 transition-colors duration-300"
                 aria-label="Email"
               >
                 <FaEnvelope className="w-4 h-4" />
@@ -128,7 +128,7 @@ export default function GymkhanaCommitteePage() {
                 href={member.linkedinUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-full bg-gray-100 hover:bg-[#0077B5] hover:text-white transition-colors duration-300"
+                className="p-2 rounded-full bg-zinc-600 text-zinc-200 border border-zinc-500/50 hover:bg-[#0077B5] hover:text-white hover:border-[#0077B5]/60 transition-colors duration-300"
                 aria-label="LinkedIn"
               >
                 <FaLinkedin className="w-4 h-4" />

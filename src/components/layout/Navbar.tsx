@@ -1,8 +1,9 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, Suspense } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Particles } from '@/components/magicui/particles';
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -40,8 +41,18 @@ const Navbar = () => {
   }, [isDropdownOpen]);
 
   return (
-    <nav className="bg-gradient-to-r from-gray-900 to-gray-950 backdrop-blur-sm border-b border-gray-800 top-0 sticky w-full z-50 shadow-lg">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <nav className="relative sticky top-0 z-50 w-full overflow-hidden border-b border-white/10 bg-[#030508]/80 shadow-[0_4px_30px_-8px_rgba(0,0,0,0.85)] backdrop-blur-md">
+      <Suspense fallback={null}>
+        <Particles
+          className="pointer-events-none absolute inset-0 z-0 opacity-[0.35]"
+          quantity={28}
+          color="#94a3b8"
+          size={0.45}
+          ease={85}
+          staticity={55}
+        />
+      </Suspense>
+      <div className="relative z-10 mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
         <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <Image src="/home/hosca.png" width={48} height={48} alt="Logo" className="h-12 w-auto object-contain rounded-full"/>
           <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">HOSCA</span>
