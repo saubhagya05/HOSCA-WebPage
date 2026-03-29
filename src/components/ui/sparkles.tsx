@@ -7,6 +7,7 @@ import { loadSlim } from "@tsparticles/slim";
 import { cn } from "@/lib/utils";
 import { motion, useAnimation } from "motion/react";
 
+
 type ParticlesProps = {
   id?: string;
   className?: string;
@@ -80,7 +81,6 @@ export const SparklesCore = (props: ParticlesProps) => {
                   enable: false,
                   mode: "repulse",
                 },
-                resize: true as any,
               },
               modes: {
                 push: {

@@ -10,15 +10,14 @@ const Footer = () => {
     { name: 'Clubs', href: '/club' },
     { name: 'Gallery', href: '/gallery' },
     { name: 'Events', href: '/events' },
-    { name: 'HOSCA Committee', href: '/committee/hoscaa' },
-    { name: 'Gymkhana Committee', href: '/committee/gymkhana' },
+    { name: 'Gymkhana Committee', href: '/committee/Developers' },
     { name: 'IIT Patna', href: 'https://www.iitp.ac.in/', external: true },
   ];
 
   const socialLinks = {
     hosca: [
-      { icon: FaFacebook, href: 'https://www.facebook.com/iitp.sociocultural/', label: 'HOSCA Facebook' },
-      { icon: FaInstagram, href: 'https://www.instagram.com/hosca_iitp_official/', label: 'HOSCA Instagram' },
+      { icon: FaFacebook, href: 'https://www.facebook.com/hosca.iitp', label: 'HOSCA Facebook' },
+      { icon: FaInstagram, href: 'https://www.instagram.com/iitpatna_hosca/', label: 'HOSCA Instagram' },
       { icon: FaYoutube, href: 'https://www.youtube.com/user/CULTatIITP', label: 'HOSCA YouTube' },
     ],
     iitp: [
@@ -37,7 +36,7 @@ const Footer = () => {
             <div className="flex items-center space-x-4">
               <div className="relative w-16 h-16 rounded-full overflow-hidden bg-white">
                 <Image
-                  src="/hosca.jpg"
+                  src="/home/hosca.png"
                   alt="HOSCA Logo"
                   fill
                   className="object-cover"
@@ -99,18 +98,6 @@ const Footer = () => {
               </div>
             </div>
             <div className="flex space-x-4">
-              {/* {socialLinks.iitp.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors duration-200"
-                  aria-label={link.label}
-                >
-                  <link.icon className="w-6 h-6" />
-                </a>
-              ))} */}
             </div>
           </div>
         </div>
@@ -118,7 +105,7 @@ const Footer = () => {
 
       <div className="bg-gray-950 py-4">
         <div className="max-w-7xl mx-auto px-4 text-center text-gray-400">
-          © {new Date().getFullYear()} IIT Patna. All rights reserved.
+          © {new Date().getFullYear()} Hosca IIT Patna. All rights reserved.
         </div>
       </div>
     </footer>

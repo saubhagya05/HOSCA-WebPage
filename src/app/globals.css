@@ -64,7 +64,17 @@
     opacity: 1;}
   100% {
     transform: rotate(var(--angle)) translateX(-500px);
-    opacity: 0;}}}
+    opacity: 0;}}
+  --animate-background-position-spin: background-position-spin 3000ms infinite alternate;
+  @keyframes background-position-spin {
+  0% {
+    background-position: top center;}
+  100% {
+    background-position: bottom center;}}}
+
+ 
+  
+  
 
 :root {
   --radius: 0.625rem;
@@ -269,4 +279,29 @@ main {
 .content-wrapper {
   padding-top: 0;
   margin-top: 0;
+}
+@import "tailwindcss";
+
+@theme inline {
+  --animate-scroll: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
+
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 0.5rem));
+    }
+  }
+}
+@import "tailwindcss";
+
+@theme inline {
+  --animate-move: move 5s linear infinite;
+
+  @keyframes move {
+    0% {
+      transform: translateX(-200px);
+    }
+    100% {
+      transform: translateX(200px);
+    }
+  }
 }

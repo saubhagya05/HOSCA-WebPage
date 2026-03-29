@@ -1,7 +1,10 @@
 "use client";
 
 import React, { createContext, useContext, useRef } from "react";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { motion, useMotionValue } from "framer-motion";
+
+const CARD_HEIGHT = "350px"; // Adjust this value as needed
+const CARD_WIDTH = "300px";
 
 const MouseEnterContext = createContext<
   [boolean, React.Dispatch<React.SetStateAction<boolean>>] | undefined
@@ -41,9 +44,11 @@ export const CardContainer = ({
   return (
     <MouseEnterContext.Provider value={[isMouseEntered, setIsMouseEntered]}>
       <div
-        className={`py-20 flex items-center justify-center ${containerClassName}`}
+        className={`py-0.5 flex items-center justify-center ${containerClassName}`}
         style={{
           perspective: "1000px",
+          height: CARD_HEIGHT, // Set consistent height
+          width: CARD_WIDTH,
         }}
       >
         <motion.div
@@ -57,9 +62,11 @@ export const CardContainer = ({
           transition={{
             duration: 0.2,
           }}
-          className={`flex items-center justify-center relative w-full h-full ${className}`}
+          className={`flex items-center justify-center relative  ${className}`}
           style={{
             transformStyle: "preserve-3d",
+            height: "100%",
+            width: "100%",
           }}
         >
           {children}
@@ -78,7 +85,11 @@ export const CardBody = ({
 }) => {
   return (
     <div
-      className={`h-96 w-96 [transform-style:preserve-3d] ${className}`}
+      className={`[transform-style:preserve-3d] ${className}`}
+      style={{
+        height: "100%",
+        width: "100%",
+      }}
     >
       {children}
     </div>
@@ -89,12 +100,6 @@ export const CardItem = ({
   as: Tag = "div",
   children,
   className,
-  translateX = 0,
-  translateY = 0,
-  translateZ = 0,
-  rotateX = 0,
-  rotateY = 0,
-  rotateZ = 0,
   ...rest
 }: {
   as?: React.ElementType;
@@ -113,24 +118,6 @@ export const CardItem = ({
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-
-  const mouseXSpring = useSpring(x);
-  const mouseYSpring = useSpring(y);
-
-  const rotateXNum = typeof rotateX === 'string' ? parseFloat(rotateX) : rotateX;
-  const rotateYNum = typeof rotateY === 'string' ? parseFloat(rotateY) : rotateY;
-  const rotateZNum = typeof rotateZ === 'string' ? parseFloat(rotateZ) : rotateZ;
-  const translateXNum = typeof translateX === 'string' ? parseFloat(translateX) : translateX;
-  const translateYNum = typeof translateY === 'string' ? parseFloat(translateY) : translateY;
-  const translateZNum = typeof translateZ === 'string' ? parseFloat(translateZ) : translateZ;
-
-  const rotateXSpring = useSpring(rotateXNum);
-  const rotateYSpring = useSpring(rotateYNum);
-  const rotateZSpring = useSpring(rotateZNum);
-
-  const translateXSpring = useSpring(translateXNum);
-  const translateYSpring = useSpring(translateYNum);
-  const translateZSpring = useSpring(translateZNum);
 
   React.useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
