@@ -146,7 +146,7 @@ export default function AnimePage() {
   );
   return (
     <div className="relative min-h-screen w-full bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
-      <BackgroundBeams className="absolute inset-0" />
+      <BackgroundBeams className="absolute inset-0 bg-[#672222]" />
       <div className="container mx-auto px-4 py-8 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 mb-16 mt-12 lg:mt-24">   
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
@@ -166,7 +166,7 @@ export default function AnimePage() {
           
           <div className="w-full lg:w-1/2 text-center lg:text-left lg:pl-8">
             <h1
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-sky-400 mb-6"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-6"
               style={{ color: "#007C91" }}
             >
               Anime Club
@@ -262,7 +262,7 @@ export default function AnimePage() {
             href="https://www.instagram.com/animeclub_iitp/"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 rounded-full bg-gray-100 hover:bg-[#E1306C] hover:text-white transition-colors duration-300"
+            className="p-3 rounded-full text-black bg-gray-100 hover:bg-[#E1306C] hover:text-white transition-colors duration-300"
             aria-label="Instagram"
           >
             <FaInstagram className="w-6 h-6" />

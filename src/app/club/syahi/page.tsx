@@ -161,7 +161,7 @@ export default function SyahiPage() {
   );
 
   return (
-    <div className="relative min-h-screen w-full bg-[url('/club/aria_background.jpeg')] bg-cover bg-center bg-no-repeat">
+    <div className="relative min-h-screen bg-[#10064b] w-full bg-[url('/club/aria_background.jpeg')] bg-cover bg-center bg-no-repeat">
       <div className="absolute inset-0 bg-white/[0.6]"></div>
       <BackgroundBeams className="absolute inset-0" />
 
@@ -181,7 +181,7 @@ export default function SyahiPage() {
           </div>
 
           <div className="w-full lg:w-1/2 text-center lg:text-left lg:pl-8">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-blue-300 mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#8f4607] mb-6">
               Syahi Club
             </h1>
             <p className="text-lg md:text-xl text-black max-w-2xl mx-auto lg:mx-0">
@@ -196,7 +196,7 @@ export default function SyahiPage() {
           {/* About Section */}
           <div className="w-full">
             <div className="border-white relative group/card shadow-lg w-full h-auto rounded-xl p-8 ">
-              <h2 className="text-2xl font-bold text-neutral-700 dark:text-white mb-4">
+              <h2 className="text-2xl font-bold text-black dark:text-white mb-4">
                 About Syahi Club
               </h2>
               <p className="text-neutral-600 dark:text-neutral-300">
@@ -274,7 +274,7 @@ export default function SyahiPage() {
             href="https://www.facebook.com/syahi_iitp/"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 rounded-full bg-gray-100 hover:bg-[#1877F2] hover:text-white transition-colors duration-300"
+            className="p-3 rounded-full bg-gray-100 text-black hover:bg-[#1877F2] hover:text-white transition-colors duration-300"
             aria-label="Facebook"
           >
             <FaFacebook className="w-6 h-6" />
@@ -283,7 +283,7 @@ export default function SyahiPage() {
             href="https://www.instagram.com/syahi.iitp/"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 rounded-full bg-gray-100 hover:bg-[#E1306C] hover:text-white transition-colors duration-300"
+            className="p-3 rounded-full bg-gray-100 text-black hover:bg-[#E1306C] hover:text-white transition-colors duration-300"
             aria-label="Instagram"
           >
             <FaInstagram className="w-6 h-6" />
@@ -292,7 +292,7 @@ export default function SyahiPage() {
             href="https://www.youtube.com/c/SyahiLiteraryAssociationIITP"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 rounded-full bg-gray-100 hover:bg-[#FF0000] hover:text-white transition-colors duration-300"
+            className="p-3 rounded-full bg-gray-100  text-black hover:bg-[#FF0000] hover:text-white transition-colors duration-300"
             aria-label="YouTube"
           >
             <FaYoutube className="w-6 h-6" />

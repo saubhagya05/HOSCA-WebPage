@@ -158,7 +158,7 @@ export default function PixxelPage() {
   return (
     <div className="relative min-h-screen w-full bg-[url('/club/aria_background.jpeg')] bg-cover bg-center bg-no-repeat">
       <div className="absolute inset-0 bg-white/[0.6]"></div>
-      <BackgroundBeams className="absolute inset-0" />
+      <BackgroundBeams className="absolute inset-0 bg-[#1b161c]" />
       <div className="container mx-auto px-4 py-8 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 mb-16 mt-12 lg:mt-24">
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
@@ -178,7 +178,7 @@ export default function PixxelPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               Pixxel
             </h1>
-            <p className="text-lg md:text-xl text-black max-w-2xl mx-auto lg:mx-0">
+            <p className="text-lg md:text-xl text-white max-w-2xl mx-auto lg:mx-0">
               The Photography and Videography Club of IIT Patna - Capturing
               moments, creating memories.
             </p>
@@ -272,7 +272,7 @@ export default function PixxelPage() {
             href="https://www.facebook.com/pixxeliitp/"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 rounded-full bg-gray-100 hover:bg-[#1877F2] hover:text-white transition-colors duration-300"
+            className="p-3 rounded-full text-black bg-gray-100 hover:bg-[#1877F2] hover:text-white transition-colors duration-300"
             aria-label="Facebook"
           >
             <FaFacebook className="w-6 h-6" />
@@ -281,7 +281,7 @@ export default function PixxelPage() {
             href="https://www.instagram.com/pixxel_iitp/"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 rounded-full bg-gray-100 hover:bg-[#E1306C] hover:text-white transition-colors duration-300"
+            className="p-3 rounded-full text-black bg-gray-100 hover:bg-[#E1306C] hover:text-white transition-colors duration-300"
             aria-label="Instagram"
           >
             <FaInstagram className="w-6 h-6" />
@@ -290,7 +290,7 @@ export default function PixxelPage() {
             href="https://www.youtube.com/@PixxelIITP"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 rounded-full bg-gray-100 hover:bg-[#FF0000] hover:text-white transition-colors duration-300"
+            className="p-3 rounded-full text-black bg-gray-100 hover:bg-[#FF0000] hover:text-white transition-colors duration-300"
             aria-label="YouTube"
           >
             <FaYoutube className="w-6 h-6" />

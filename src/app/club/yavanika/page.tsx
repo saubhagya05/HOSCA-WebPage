@@ -87,8 +87,7 @@ export default function YavanikaPage() {
   const renderMemberCard = (member: ClubMember) => (
     <div key={member.id} className="flex justify-center w-full">
       <CardContainer className="w-[320px] h-[320px]">
-        <CardBody className="bg-white dark:bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-yellow-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-[280px] h-[320px] rounded-xl p-6 border flex flex-col justify-between">
-          <CardItem translateZ="100" className="w-full mt-4">
+        <CardBody className="bg-[#f8f8f8] relative group/card border-black/[0.1] w-[280px] h-[320px] rounded-xl p-6 border flex flex-col justify-between">          <CardItem translateZ="100" className="w-full mt-4">
             <div className="relative w-36 h-36 mx-auto mb-4 rounded-full overflow-hidden border-2 border-yellow-500 flex-shrink-0">
               {member.imageUrl ? (
                 <Image
@@ -111,8 +110,7 @@ export default function YavanikaPage() {
           <div className="flex justify-center gap-5 mt-4">
             <CardItem
               translateZ="50"
-              className="flex items-center justify-center text-xl font-bold text-neutral-600 dark:text-white text-center"
-            >
+              className="flex items-center justify-center text-xl font-bold text-black text-center"            >
               {member.name}
             </CardItem>
           </div>
@@ -149,8 +147,7 @@ export default function YavanikaPage() {
     </div>
   );
   return (
-    <div className="relative min-h-screen w-full bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
-      <BackgroundBeams className="absolute inset-0" />
+    <div className="relative min-h-screen w-full bg-[#e5bae2] antialiased relative overflow-hidden">      <BackgroundBeams className="absolute inset-0" />
 
       <div className="container mx-auto px-4 py-8 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 mb-16 mt-12 lg:mt-24">
@@ -172,7 +169,7 @@ export default function YavanikaPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-yellow-300 mb-6">
               Yavanika
             </h1>
-            <p className="text-lg md:text-xl text-white max-w-2xl mx-auto lg:mx-0">
+            <p className="text-lg md:text-xl text-black max-w-2xl mx-auto lg:mx-0">
               The Dramatics Society of IIT Patna -Where talent meets passion and
               stories come alive on stage.
             </p>
@@ -180,39 +177,41 @@ export default function YavanikaPage() {
         </div>
 
         {/* Main Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto mb-16 ">
-          {/* About Section */}
-          <div className="w-full">
-            <div className="bg-white border-white relative group/card shadow-lg w-full h-auto rounded-xl p-8 ">
-              <h2 className="text-2xl font-bold text-neutral-700 dark:text-white mb-4">
-                About Yavanika
-              </h2>
-              <p className="text-neutral-200 dark:text-neutral-300">
-                Yavanika is the dramatics society and one of the oldest clubs of
-                IIT Patna. With talent and feeling like of a movie actor, it makes the journey
-                superexcited and memorable. From stage plays to street performances, Yavanika brings stories to life and fuels the dramatic spirit of the campus.
-              </p>
-              <div className="mt-6">
-                <h3 className="text-xl font-semibold text-neutral-700 dark:text-white mb-3">
-                  What We Do
-                </h3>
-                <ul className="list-disc list-inside text-neutral-600 dark:text-neutral-300 space-y-2">
-                  <li>Stage plays and theatrical performances</li>
-                  <li>Street plays and nukkad nataks</li>
-                  <li>Acting workshops and training sessions</li>
-                  <li>Inter-college drama competitions</li>
-                  <li>Annual theatrical productions</li>
-                </ul>
-              </div>
-              <div className="mt-6">
-                <h3 className="text-xl font-semibold text-neutral-700 dark:text-white mb-3">Our Events</h3>
-                <ul className="list-disc list-inside text-neutral-600 dark:text-neutral-300 space-y-2">
-                  <li>Nautanki Nights</li>
-                  <li>RangManch</li>
-                  <li>Abhivyakti</li>
-                  <li>Kalakriti</li>
-                  <li>Goonj-E-Dastaan</li>
-                </ul>
+<div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto mb-16 ">
+  {/* About Section */}
+  <div className="w-full">
+    <div className="bg-[#f8f8f8] border-white relative group/card shadow-lg w-full h-auto rounded-xl p-8 ">
+      <h2 className="text-2xl font-bold text-black mb-4">
+        About Yavanika
+      </h2>
+      <p className="text-black">
+        Yavanika is the dramatics society and one of the oldest clubs of
+        IIT Patna. With talent and feeling like of a movie actor, it makes the journey
+        superexcited and memorable. From stage plays to street performances, Yavanika brings stories to life and fuels the dramatic spirit of the campus.
+      </p>
+      <div className="mt-6">
+        <h3 className="text-xl font-semibold text-black mb-3">
+          What We Do
+        </h3>
+        <ul className="list-disc list-inside text-black space-y-2">
+          <li>Stage plays and theatrical performances</li>
+          <li>Street plays and nukkad nataks</li>
+          <li>Acting workshops and training sessions</li>
+          <li>Inter-college drama competitions</li>
+          <li>Annual theatrical productions</li>
+        </ul>
+      </div>
+      <div className="mt-6">
+        <h3 className="text-xl font-semibold text-black mb-3">
+          Our Events
+        </h3>
+        <ul className="list-disc list-inside text-black space-y-2">
+          <li>Nautanki Nights</li>
+          <li>RangManch</li>
+          <li>Abhivyakti</li>
+          <li>Kalakriti</li>
+          <li>Goonj-E-Dastaan</li>
+        </ul>
               </div>
             </div>
           </div>
@@ -249,7 +248,7 @@ export default function YavanikaPage() {
 
 
         <section className="space-y-12">
-          <h2 className="text-4xl font-bold text-center mb-12 text-white">
+          <h2 className="text-4xl font-bold text-center mb-12 text-black">
             Our Team
           </h2>
           <h2 className="text-3xl font-semibold text-center mb-6 text-yellow-300 px-2 md:px-0">
@@ -307,8 +306,7 @@ export default function YavanikaPage() {
             href="https://www.facebook.com/yavanika.iitp/"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 rounded-full bg-gray-100 hover:bg-[#1877F2] hover:text-white transition-colors duration-300"
-            aria-label="Facebook"
+            className="p-3 rounded-full bg-gray-100 text-black hover:bg-gray-300 transition-colors duration-300"            aria-label="Facebook"
           >
             <FaFacebook className="w-6 h-6" />
           </a>
@@ -316,7 +314,7 @@ export default function YavanikaPage() {
             href="https://www.instagram.com/yavanika_iitp/"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 rounded-full bg-gray-100 hover:bg-[#E1306C] hover:text-white transition-colors duration-300"
+            className="p-3 rounded-full bg-gray-100  text-black hover:bg-[#E1306C] hover:text-white transition-colors duration-300"
             aria-label="Instagram"
           >
             <FaInstagram className="w-6 h-6" />
@@ -325,7 +323,7 @@ export default function YavanikaPage() {
             href="https://www.youtube.com/@Yavanika_iitp"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 rounded-full bg-gray-100 hover:bg-[#FF0000] hover:text-white transition-colors duration-300"
+            className="p-3 rounded-full bg-gray-100  text-black hover:bg-[#FF0000] hover:text-white transition-colors duration-300"
             aria-label="YouTube"
           >
             <FaYoutube className="w-6 h-6" />

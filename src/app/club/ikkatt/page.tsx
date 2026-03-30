@@ -170,7 +170,7 @@ export default function AnimePage() {
   );
   return (
     <div className="relative min-h-screen w-full bg-white/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
-      <BackgroundBeams className="absolute inset-0" />
+      <BackgroundBeams className="absolute inset-0 bg-[#e0789b]" />
 
       <div className="container mx-auto px-4 py-8 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 mb-16 mt-12 lg:mt-24">

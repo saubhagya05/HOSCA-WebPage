@@ -159,7 +159,7 @@ export default function QuizPage() {
   return (
     <div className="relative min-h-screen w-full bg-[url('/club/aria_background.jpeg')] bg-cover bg-center bg-no-repeat">
       <div className="absolute inset-0 bg-white/[0.6]"></div>
-      <BackgroundBeams className="absolute inset-0" />
+      <BackgroundBeams className="absolute inset-0 bg-[#8a4242]" />
 
       <div className="container mx-auto px-4 py-8 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 mb-16 mt-12 lg:mt-24">
@@ -180,7 +180,7 @@ export default function QuizPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-yellow-600 mb-6">
               Quiz Club
             </h1>
-            <p className="text-lg md:text-xl text-black max-w-2xl mx-auto lg:mx-0">
+            <p className="text-lg md:text-xl text-white max-w-2xl mx-auto lg:mx-0">
               One doesn&apos;t need to mug up random nerdy facts to attend quizzes,
               all one needs is a keen eye for the things that surround us
             </p>
@@ -283,7 +283,7 @@ export default function QuizPage() {
             href="https://www.facebook.com/QCIITP/"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 rounded-full bg-gray-100 hover:bg-[#1877F2] hover:text-white transition-colors duration-300"
+            className="p-3 rounded-full bg-gray-100 text-black hover:bg-[#1877F2] hover:text-white transition-colors duration-300"
             aria-label="Facebook"
           >
             <FaFacebook className="w-6 h-6" />
@@ -292,7 +292,7 @@ export default function QuizPage() {
             href="https://www.instagram.com/qc_iitp/"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 rounded-full bg-gray-100 hover:bg-[#E1306C] hover:text-white transition-colors duration-300"
+            className="p-3 rounded-full bg-gray-100 text-black hover:bg-[#E1306C] hover:text-white transition-colors duration-300"
             aria-label="Instagram"
           >
             <FaInstagram className="w-6 h-6" />
@@ -301,7 +301,7 @@ export default function QuizPage() {
             href="https://www.youtube.com/c/QuizClubIITPatna"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 rounded-full bg-gray-100 hover:bg-[#FF0000] hover:text-white transition-colors duration-300"
+            className="p-3 rounded-full bg-gray-100 text-black hover:bg-[#FF0000] hover:text-white transition-colors duration-300"
             aria-label="YouTube"
           >
             <FaYoutube className="w-6 h-6" />

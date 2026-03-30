@@ -81,6 +81,7 @@ const HootMembers: ClubMember[] = [
     imageUrl: '/SubCords/HOOT/Gopal.jpg',
   }
 ];
+
 export default function HootPage() {
   const renderMemberCard = (member: ClubMember) => (
     <div key={member.id} className="flex justify-center w-full">
@@ -160,7 +161,7 @@ export default function HootPage() {
   );
   return (
     <div className="relative min-h-screen w-full bg-[url('/club/aria_background.jpeg')] bg-cover bg-center bg-no-repeat">
-      <div className="absolute inset-0 bg-white/[0.6]"></div>
+      <div className="absolute inset-0 bg-[#f0fdf4]"></div>
       <BackgroundBeams className="absolute inset-0" />
 
       <div className="container mx-auto px-4 py-8 relative z-10">
@@ -196,40 +197,40 @@ export default function HootPage() {
         </div> */}
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* About Section */}
-          <div className="w-full">
-            <div className="border-white relative group/card shadow-lg w-full h-auto rounded-xl p-8">
-              <h2 className="text-2xl font-bold text-neutral-700 dark:text-white mb-4">
-                About HOOT
-              </h2>
-              <p className="text-neutral-600 dark:text-neutral-300">
-                The House of Oratory Talents is the speaking arts club of IIT
-                Patna. HOOT is a vibrant space for exploring ideas, public speaking and expressing thoughts with clarity. Through debates,
-                discussions and performance arts, it fosters confidence, critical thinking and creative expression.
-              </p>
-              <div className="mt-6">
-                <h3 className="text-xl font-semibold text-neutral-700 dark:text-white mb-3">
-                  What We Do
-                </h3>
-                <ul className="list-disc list-inside text-neutral-600 dark:text-neutral-300 space-y-2">
-                  <li>Debate competitions</li>
-                  <li>Improv Battles</li>
-                  <li>Just A Minute (JAM) sessions</li>
-                  <li>Public speaking workshops</li>
-                  <li>Group discussions</li>
-                </ul>
-              </div>
-              <div className="mt-6">
-                <h3 className="text-xl font-semibold text-neutral-700 dark:text-white mb-3">
-                  Our Events
-                </h3>
-                <ul className="list-disc list-inside text-neutral-600 dark:text-neutral-300 space-y-2">
-                  <li>PD (Public Debate)</li>
-                  <li>MUN (Model United Nations)</li>
-                  <li>Just A Minute (JAM)</li>
-                  <li>Verbal Voyage</li>
-                  <li>Asian Parliamentary Debate</li>
-                </ul>
+  {/* About Section */}
+  <div className="w-full">
+    <div className="border-white relative group/card shadow-lg w-full h-auto rounded-xl p-8">
+      <h2 className="text-2xl font-bold text-black mb-4">
+        About HOOT
+      </h2>
+      <p className="text-black">
+        The House of Oratory Talents is the speaking arts club of IIT
+        Patna. HOOT is a vibrant space for exploring ideas, public speaking and expressing thoughts with clarity. Through debates,
+        discussions and performance arts, it fosters confidence, critical thinking and creative expression.
+      </p>
+      <div className="mt-6">
+        <h3 className="text-xl font-semibold text-black mb-3">
+          What We Do
+        </h3>
+        <ul className="list-disc list-inside text-black space-y-2">
+          <li>Debate competitions</li>
+          <li>Improv Battles</li>
+          <li>Just A Minute (JAM) sessions</li>
+          <li>Public speaking workshops</li>
+          <li>Group discussions</li>
+        </ul>
+      </div>
+      <div className="mt-6">
+        <h3 className="text-xl font-semibold text-black mb-3">
+          Our Events
+        </h3>
+        <ul className="list-disc list-inside text-black space-y-2">
+          <li>PD (Public Debate)</li>
+          <li>MUN (Model United Nations)</li>
+          <li>Just A Minute (JAM)</li>
+          <li>Verbal Voyage</li>
+          <li>Asian Parliamentary Debate</li>
+        </ul>
               </div>
             </div>
           </div>
@@ -275,26 +276,25 @@ export default function HootPage() {
           </div>
         </section>
         <div className="flex justify-center gap-6 mt-12">
-          <a
-            href="https://www.facebook.com/hootiitp/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-3 rounded-full bg-gray-100 hover:bg-[#1877F2] hover:text-white transition-colors duration-300"
-            aria-label="Facebook"
-          >
-            <FaFacebook className="w-6 h-6" />
-          </a>
-          <a
-            href="https://www.instagram.com/hoot.iitp/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-3 rounded-full bg-gray-100 hover:bg-[#E1306C] hover:text-white transition-colors duration-300"
-            aria-label="Instagram"
-          >
-            <FaInstagram className="w-6 h-6" />
-          </a>
-         
-        </div>
+  <a
+    href="https://www.facebook.com/hootiitp/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="p-3 rounded-full bg-gray-100 text-black hover:bg-gray-300 transition-colors duration-300"
+    aria-label="Facebook"
+  >
+    <FaFacebook className="w-6 h-6" />
+  </a>
+  <a
+    href="https://www.instagram.com/hoot.iitp/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="p-3 rounded-full bg-gray-100 text-black hover:bg-gray-300 transition-colors duration-300"
+    aria-label="Instagram"
+  >
+    <FaInstagram className="w-6 h-6" />
+  </a>
+</div>
       </div>
     </div>
   );

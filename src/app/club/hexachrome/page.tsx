@@ -142,8 +142,8 @@ export default function HexaChromePage() {
 
   return (
     <div className="relative min-h-screen w-full bg-[url('/club/aria_background.jpeg')] bg-cover bg-center bg-no-repeat">
-      <div className="absolute inset-0 bg-white/60"></div>
-      <BackgroundBeams className="absolute inset-0" />
+      <div className="absolute inset-0 bg-white/60 "></div>
+      <BackgroundBeams className="absolute inset-0 bg-[#050157]" />
 
       <div className="container mx-auto px-4 py-8 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 mb-16 mt-12 lg:mt-24">
@@ -164,7 +164,7 @@ export default function HexaChromePage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-sky-400 mb-6">
               HexaChrome
             </h1>
-            <p className="text-lg md:text-xl text-black max-w-2xl mx-auto lg:mx-0">
+            <p className="text-lg md:text-xl text-white max-w-2xl mx-auto lg:mx-0">
               Aims to provide a platform for students to learn and improve in
               solving puzzles such as Rubik&apos;s Cube, Cryptograms,
               Crosswords, Scrabble.
@@ -290,7 +290,7 @@ export default function HexaChromePage() {
             href="https://www.instagram.com/hexachrome_iitp/"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 rounded-full bg-gray-100 hover:bg-[#E1306C] hover:text-white transition-colors duration-300"
+            className="p-3 rounded-full text-black bg-gray-100 hover:bg-[#E1306C] hover:text-white transition-colors duration-300"
             aria-label="Instagram"
           >
             <FaInstagram className="w-6 h-6" />

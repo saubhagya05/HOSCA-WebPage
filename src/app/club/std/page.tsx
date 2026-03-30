@@ -134,7 +134,7 @@ export default function AnimePage() {
   );
   return (
     <div className="relative min-h-screen w-full bg-white/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
-      <BackgroundBeams className="absolute inset-0" />
+      <BackgroundBeams className="absolute inset-0 bg-[#50045e]" />
 
       <div className="container mx-auto px-4 py-8 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 mb-16 mt-12 lg:mt-24">
@@ -158,7 +158,7 @@ export default function AnimePage() {
             >
               STD
             </h1>
-            <p className="text-lg md:text-xl text-black max-w-2xl mx-auto lg:mx-0">
+            <p className="text-lg md:text-xl text-white max-w-2xl mx-auto lg:mx-0">
               IITP’s unofficial therapy session where students turn awkwardness,
               engineering pain, and hostel horrors into stand-up gold. Laughter
               guaranteed.
@@ -248,7 +248,7 @@ Join the StandUp Club—where crying turns into comedy, and oversharing is an ar
             href="https://www.instagram.com/standup_club.iitp/"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 rounded-full bg-gray-100 hover:bg-[#E1306C] hover:text-white transition-colors duration-300"
+            className="p-3 rounded-full text-black bg-gray-100 hover:bg-[#E1306C] hover:text-white transition-colors duration-300"
             aria-label="Instagram"
           >
             <FaInstagram className="w-6 h-6" />
@@ -258,7 +258,7 @@ Join the StandUp Club—where crying turns into comedy, and oversharing is an ar
             href="https://www.instagram.com/standup_club.iitp/"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 rounded-full bg-gray-100 hover:bg-[#E1306C] hover:text-white transition-colors duration-300"
+            className="p-3 rounded-full text-black bg-gray-100 hover:bg-[#E1306C] hover:text-white transition-colors duration-300"
             aria-label="Instagram"
           >
             <FaYoutube className="w-6 h-6" />

@@ -1,9 +1,10 @@
 "use client";
 
-import { BackgroundBeams } from "@/components/ui/background-beams";
-import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
-import { FaLinkedin, FaEnvelope } from "react-icons/fa";
+import type { ReactNode } from "react";
 import Image from "next/image";
+import { FaEnvelope, FaLinkedin } from "react-icons/fa";
+import { StarrySkyBackdrop } from "@/components/StarrySkyBackdrop";
+
 interface CommitteeMember {
   id: number;
   name: string;
@@ -48,140 +49,114 @@ const committeeMembers: CommitteeMember[] = [
     imageUrl: "/HoscaaCore/ashwin.jpg",
     linkedinUrl:
       "https://www.linkedin.com/in/ashwin-chowdary-b5306034a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-  }
+  },
 ];
 
 export default function GymkhanaCommitteePage() {
-  const gymkhanaAdvisor = committeeMembers.find(
-    (member) => member.position === "PIC Cultural"
-  );
-  const generalSecretary = committeeMembers.find(
-    (member) => member.position === "General Secretary Cultural"
-  );
-  const otherMembers = committeeMembers.filter(
-    (member) =>
-      member.position !== "PIC Cultural" &&
-      member.position !== "General Secretary Cultural"
-  );
+  return (
+    <section className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-black/30 px-4 py-12 backdrop-blur-sm sm:px-6 lg:px-10">
+      <StarrySkyBackdrop className="absolute inset-0" intensity="subtle" particleQuantity={42} />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.14),transparent_30%),radial-gradient(circle_at_80%_20%,rgba(148,163,184,0.12),transparent_26%),radial-gradient(circle_at_50%_100%,rgba(236,72,153,0.10),transparent_32%)]" />
 
-  const renderMemberCard = (member: CommitteeMember) => (
-    <div key={member.id} className="flex justify-center w-full">
-      <CardContainer className="w-50">
-        <CardBody className="bg-gray-50 relative group/card hover:shadow-[0_0_20px_5px_rgba(234,179,8,0.5)] dark:hover:shadow-[0_0_25px_7px_rgba(234,179,8,0.2)] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-6 border transition-all duration-300">
-          <CardItem translateZ="100" className="w-full mt-4">
-            <div className="relative w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-3 border-[#768686] ">
-              {member.imageUrl ? (
-                <Image
-                  fill
-                  src={member.imageUrl}
-                  alt={member.name}
-                  sizes="128px"
-                  loading="lazy"
-                  fetchPriority="low"
-                  className="w-full h-full object-cover"
-                />
-              ) : (
-                <div className="w-full h-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-                  <span className="text-4xl text-gray-400 dark:text-gray-500 flex items-center justify-center w-full h-full">
-                    {member.name.charAt(0)}
-                  </span>
+      <div className="relative z-10 mx-auto max-w-6xl">
+        <div className="mx-auto mb-12 max-w-3xl text-center">
+          <p className="mb-4 text-sm uppercase tracking-[0.38em] text-slate-400">
+            HOSCA Committee
+          </p>
+          <h2 className="text-4xl font-semibold tracking-tight text-white md:text-5xl">
+            Leadership
+          </h2>
+          <p className="mt-5 text-base leading-7 text-slate-300 md:text-lg">
+            The leadership team guiding cultural life at IIT Patna, presented in a
+            cleaner profile-first layout that fits the site&apos;s starry visual language.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
+          {committeeMembers.map((member) => (
+            <article
+              key={member.id}
+              className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.06] p-6 shadow-[0_18px_50px_-30px_rgba(15,23,42,0.9)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1.5 hover:border-sky-300/30 hover:shadow-[0_20px_70px_-30px_rgba(56,189,248,0.45)]"
+            >
+              <div className="absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent" />
+
+              <div className="relative mx-auto h-32 w-32 overflow-hidden rounded-[2rem] border border-white/12 bg-slate-900/80 p-1">
+                <div className="relative h-full w-full overflow-hidden rounded-[1.7rem]">
+                  {member.imageUrl ? (
+                    <Image
+                      src={member.imageUrl}
+                      alt={member.name}
+                      fill
+                      sizes="128px"
+                      className="object-cover"
+                    />
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center bg-slate-800 text-4xl text-slate-400">
+                      {member.name.charAt(0)}
+                    </div>
+                  )}
                 </div>
-              )}
-            </div>
-          </CardItem>
+              </div>
 
-          <div className="flex justify-center gap-5 mt-4">
-            <CardItem
-              translateZ="50"
-              className="flex items-center justify-center text-2xl font-bold text-neutral-600 dark:text-white text-center"
-            >
-              {member.name}
-            </CardItem>
-          </div>
+              <div className="mt-6 text-center">
+                <h3 className="text-xl font-semibold text-white">{member.name}</h3>
+                <p className="mt-2 text-sm italic tracking-wide text-sky-200/75">
+                  {member.position}
+                </p>
+              </div>
 
-          <div className="flex justify-center gap-5 mt-4">
-            <CardItem
-              as="p"
-              translateZ="60"
-              className="text-neutral-500 text-md max-w-sm mt-2 dark:text-neutral-300 text-center"
-            >
-              {member.position}
-            </CardItem>
-          </div>
-
-          <div className="flex justify-center gap-4 mt-4">
-            {member.email && (
-              <CardItem
-                translateZ={20}
-                as="a"
-                href={`mailto:${member.email}`}
-                className="p-2 rounded-full bg-zinc-600 text-zinc-200 border border-zinc-500/50 hover:bg-red-500 hover:text-white hover:border-red-400/50 transition-colors duration-300"
-                aria-label="Email"
-              >
-                <FaEnvelope className="w-4 h-4" />
-              </CardItem>
-            )}
-            {member.linkedinUrl && (
-              <CardItem
-                translateZ={20}
-                as="a"
-                href={member.linkedinUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-full bg-zinc-600 text-zinc-200 border border-zinc-500/50 hover:bg-[#0077B5] hover:text-white hover:border-[#0077B5]/60 transition-colors duration-300"
-                aria-label="LinkedIn"
-              >
-                <FaLinkedin className="w-4 h-4" />
-              </CardItem>
-            )}
-          </div>
-        </CardBody>
-      </CardContainer>
-    </div>
+              <div className="mt-5 flex justify-center gap-3 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                {member.email && (
+                  <ProfileAction
+                    href={`mailto:${member.email}`}
+                    label={`Email ${member.name}`}
+                  >
+                    <FaEnvelope className="h-4 w-4" />
+                  </ProfileAction>
+                )}
+                {member.linkedinUrl && (
+                  <ProfileAction
+                    href={member.linkedinUrl}
+                    label={`LinkedIn ${member.name}`}
+                  >
+                    <FaLinkedin className="h-4 w-4" />
+                  </ProfileAction>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
   );
+}
+
+function ProfileAction({
+  href,
+  label,
+  children,
+}: {
+  href: string;
+  label: string;
+  children: ReactNode;
+}) {
+  const normalizedHref =
+    href.startsWith("mailto:") || href.startsWith("http")
+      ? href
+      : href.includes("@")
+        ? `mailto:${href}`
+        : href;
+  const isEmail = normalizedHref.startsWith("mailto:");
 
   return (
-    <div className="relative min-h-screen w-full bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
-      <BackgroundBeams className="absolute inset-0" />
-
-      <div className="container mx-auto px-4 py-8 relative z-10">
-        <h1 className="text-4xl font-bold text-center mb-8 text-white">
-          Gymkhana Committee
-        </h1>
-
-        <section className="max-w-3xl mx-auto mb-12 text-center">
-          <p className="text-lg text-gray-300">
-            The Gymkhana Committee is responsible for managing and coordinating
-            all student activities at IIT Patna. It works closely with HOSCA and
-            other cultural clubs to organize various events and activities
-            throughout the year.
-          </p>
-        </section>
-
-        <section className="space-y-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-            <div>
-              <h3 className="text-3xl font-semibold text-white mb-10 text-center">
-                Faculty Advisor
-              </h3>
-              {gymkhanaAdvisor && renderMemberCard(gymkhanaAdvisor)}
-            </div>
-            <div>
-              <h3 className="text-3xl font-semibold text-white mb-10 text-center">
-                General Secretary
-              </h3>
-              {generalSecretary && renderMemberCard(generalSecretary)}
-            </div>
-          </div>
-
-          <h2 className="text-3xl font-semibold text-white text-center mt-12 mb-10">
-            Secretaries
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10 max-w-6xl mx-auto">
-            {otherMembers.map((member) => renderMemberCard(member))}
-          </div>
-        </section>
-      </div>
-    </div>
+    <a
+      href={normalizedHref}
+      target={isEmail ? undefined : "_blank"}
+      rel={isEmail ? undefined : "noopener noreferrer"}
+      aria-label={label}
+      className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/25 text-slate-300 transition-all duration-300 hover:-translate-y-0.5 hover:border-sky-300/35 hover:bg-sky-400/15 hover:text-white"
+    >
+      {children}
+    </a>
   );
 }

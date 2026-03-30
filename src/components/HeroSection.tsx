@@ -64,7 +64,7 @@ export default function HeroSection() {
         </div>
 
         <motion.div
-          className="flex flex-col justify-center gap-6 sm:flex-row"
+          className="flex flex-col justify-center gap-4 sm:flex-row sm:flex-wrap"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
@@ -82,6 +82,20 @@ export default function HeroSection() {
           >
             <span className="relative z-10">Learn More</span>
             <div className="absolute inset-0 bg-gradient-to-r from-white/15 to-white/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+          </Link>
+          <Link
+            href="/gallery"
+            className="group relative overflow-hidden rounded-full border border-sky-300/25 bg-sky-400/10 px-8 py-4 text-lg font-medium text-white shadow-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-sky-300/50 hover:shadow-xl"
+          >
+            <span className="relative z-10">View Gallery</span>
+            <div className="absolute inset-0 bg-gradient-to-r from-sky-400/20 to-cyan-300/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+          </Link>
+          <Link
+            href="/achievement"
+            className="group relative overflow-hidden rounded-full border border-amber-300/25 bg-amber-400/10 px-8 py-4 text-lg font-medium text-white shadow-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-amber-300/50 hover:shadow-xl"
+          >
+            <span className="relative z-10">Achievements</span>
+            <div className="absolute inset-0 bg-gradient-to-r from-amber-300/20 to-orange-300/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
           </Link>
         </motion.div>
       </div>
